@@ -2,8 +2,8 @@ grammar Lambda;
 
 lambda      :   lambdaExpr;
 
-lambdaExpr  :   '\\' ID+ '->' lambdaExpr    # abstraction
-            |   lambdaExpr lambdaExpr       # application
+lambdaExpr  :   lambdaExpr lambdaExpr       # application
+            |   '\\' ID+ '->' lambdaExpr    # abstraction
             |   ID                          # variable
             |   '(' lambdaExpr ')'          # parenthesis
             ;
