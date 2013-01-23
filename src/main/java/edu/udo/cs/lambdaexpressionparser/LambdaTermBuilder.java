@@ -22,6 +22,7 @@ public class LambdaTermBuilder extends LambdaBaseVisitor<String> {
     public String visitAbstraction(AbstractionContext ctx) {
         StringBuilder vars = new StringBuilder();
         for (TerminalNode var : ctx.ID()) {
+            vars.append(" ");
             vars.append(var.getText());
         }
         return String.format("\\ %s -> %s", vars.toString(), visit(ctx.lambdaExpr()));

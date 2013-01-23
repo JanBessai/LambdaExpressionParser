@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.BufferedTokenStream;
  */
 public class App {
     public static void main( String[] args ) {
-        LambdaLexer lexer = new LambdaLexer(new ANTLRInputStream("(\\ x -> y z) a (b)"));
+        LambdaLexer lexer = new LambdaLexer(new ANTLRInputStream("(\\ x z -> y z) a (b)"));
         LambdaParser parser = new LambdaParser(new BufferedTokenStream(lexer));
         LambdaTermBuilder builder = new LambdaTermBuilder();
         lexer.removeErrorListeners();
